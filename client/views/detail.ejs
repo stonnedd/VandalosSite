@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<%include head.ejs%>
+
+<body>
+    <%include navigationBar.ejs%>
+
+    <div class="heads" style="background: url(/images/titleBackground3.jpg) center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><span></span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <H5>
+
+        </H5>
+    </div>    <!-- begin:product-sidebar -->
+
+        <div class="row">
+                <!-- begin:product-content -->
+            <div class="col-md-9 col-sm-9 single-item">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5">
+                        <div id="itemsingle" class="carousel slide clearfix">
+
+                            <div class="carousel-inner">
+                                <div class="widget-tags">
+                                    <img height="400px" src="/<%=product.imgPath1%>" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7">
+                        <h1><%=product.model%></h1>
+                        <h4><%=product.brand%></h4>
+                        <h3><%=product.color%></h3>
+                        <p><%=product.size%></p>
+                        <h6></h6>
+                        <p><%=product.description%></p>
+                        <p>Item Code : <span class="label label-info"><%=product.id%></span></p>
+                        <h4>$<%=product.price%></h4>
+                        <!--<p><a href="#" class="btn btn-primary" ><i class="fa fa-shopping-cart"></i> Confirmar</a></p>-->
+                        <p><a href="#" class="label label-success" ><i class="fa fa-shopping-cart"></i> Confirmar</a></p>
+                        <p># disponibles : <span class="label label-danger"><%=product.quantity%></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <H5>
+
+                </H5>
+            </div>    <!-- begin:product-sidebar -->
+
+            <div class="col-md-3 col-sm-3">
+                <div class="row sidebar">
+                    <div class="col-md-12">
+                        <h3>Marcas</h3>
+                        <ul class="nav nav-pills nav-stacked">
+                            <% brands.forEach(function(brand){ %>
+                            <li><a href='/<%=category%>/brand/<%=brand.name%>'><%= brand.name %></a></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+
+<%include footer.ejs%>
+</html>

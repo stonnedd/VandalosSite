@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Vandalos navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="#"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav nav-left">
+                <% categories.forEach(function(category){ %>
+                    <%if (category.name=='Tenis' ){%>
+                        <li><a href='/Tenis/<%= category.name%>'><%= category.name %></a></li>
+                    <%} else {%>
+                        <li><a href='/<%= category.name%>' ><%= category.name %></a></li>
+                    <%}%>
+                <% }) %>
+            </ul>
+            <a href="/index" class="logo visible-lg visible-md"><img src="/images/logoVandalos.png" alt="Vandalos"></a>
+            <div id="brand" class="visible-lg visible-md">&nbsp;</div>
+
+            <ul class="nav navbar-nav nav-right">
+                <li><a href="/otros">Otros</a></li>
+                <li><a href="/outlet">OUTLET</a></li>
+                <li><a href="/contact">Contacto</a></li>
+                <li><a href="#">Comentarios</a></li>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
